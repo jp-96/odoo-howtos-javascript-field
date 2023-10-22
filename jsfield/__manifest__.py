@@ -17,7 +17,7 @@
     # Check https://github.com/odoo/odoo/blob/16.0/odoo/addons/base/data/ir_module_category_data.xml
     # for the full list
     'category': 'Uncategorized',
-    'version': '16.0',
+    'version': '16.1',
 
     # any module necessary for this one to work correctly
     'depends': ['base'],
@@ -38,6 +38,8 @@
             '/jsfield/static/src/js/late_order_boolean_field.js',
             '/jsfield/static/src/xml/late_order_boolean_field.xml',
             '/jsfield/static/src/js/my_text_field.js',
+            '/jsfield/static/src/mj_char/mj_char_field.js',
+            '/jsfield/static/src/mj_char/mj_char_field.scss',
         },
     },
 
