@@ -13,6 +13,7 @@ class jsfield(models.Model):
     description = fields.Text()
     late_order = fields.Boolean(default=False)
     my_text = fields.Char()
+    mj_text = fields.Char()
 
     @api.depends('value')
     def _value_pc(self):
