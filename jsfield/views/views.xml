@@ -8,6 +8,7 @@
       <field name="arch" type="xml">
         <tree>
           <field name="name"/>
+          <field name="mj_text" widget="mj_char"/>
           <field name="value"/>
           <field name="value2"/>
         </tree>
@@ -44,6 +45,10 @@
                     </group>
                     <group>
                       <field name="my_text" widget="my_text_field"/>
+                    </group>
+                    <group>
+                      <!-- <field name="mj_text" widget="MjChar"/> -->
+                      <field name="mj_text" widget="mj_char"/>
                     </group>
                   </page>
               </notebook>

@@ -38,6 +38,8 @@
             '/jsfield/static/src/js/late_order_boolean_field.js',
             '/jsfield/static/src/xml/late_order_boolean_field.xml',
             '/jsfield/static/src/js/my_text_field.js',
+            '/jsfield/static/src/mj_char/mj_char_field.js',
+            '/jsfield/static/src/mj_char/mj_char_field.scss',
         },
     },
 
