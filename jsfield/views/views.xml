@@ -1,0 +1,98 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="jsfield.list">
+      <field name="name">jsfield list</field>
+      <field name="model">jsfield.jsfield</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="jsfield.form">
+      <field name="name">jsfield form</field>
+      <field name="model">jsfield.jsfield</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <group>
+                <field name="name"/>
+              </group>
+              <group>
+              <group>
+                <field name="value"/>
+              </group>
+              <group>
+                <field name="value2"/>
+              </group>
+              </group>
+              <notebook>
+                  <page string="Description">
+                    <group>
+                      <field name="description"/>
+                    </group>
+                  </page>
+                  <page string="Custom Fields">
+                    <group>
+                      <field name="late_order" widget="late_boolean"/>
+                    </group>
+                    <group>
+                      <field name="my_text" widget="my_text_field"/>
+                    </group>
+                  </page>
+              </notebook>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="jsfield.action_window">
+      <field name="name">jsfield window</field>
+      <field name="res_model">jsfield.jsfield</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- server action to the one above -->
+
+    <record model="ir.actions.server" id="jsfield.action_server">
+      <field name="name">jsfield server</field>
+      <field name="model_id" ref="model_jsfield_jsfield"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+
+
+    <!-- Top menu item -->
+
+    <menuitem name="jsfield" id="jsfield.menu_root"/>
+
+    <!-- menu categories -->
+
+    <menuitem name="Menu 1" id="jsfield.menu_1" parent="jsfield.menu_root"/>
+    <menuitem name="Menu 2" id="jsfield.menu_2" parent="jsfield.menu_root"/>
+
+    <!-- actions -->
+
+    <menuitem name="List" id="jsfield.menu_1_list" parent="jsfield.menu_1"
+              action="jsfield.action_window"/>
+    <menuitem name="Server to list" id="jsfield" parent="jsfield.menu_2"
+              action="jsfield.action_server"/>
+
+  </data>
+</odoo>
