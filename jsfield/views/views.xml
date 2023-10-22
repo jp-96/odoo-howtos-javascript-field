@@ -47,8 +47,7 @@
                       <field name="my_text" widget="my_text_field"/>
                     </group>
                     <group>
-                      <!-- <field name="mj_text" widget="MjChar"/> -->
-                      <field name="mj_text" widget="mj_char"/>
+                      <field name="mj_text" widget="MjChar" style="font-size:96pt;"/>
                     </group>
                   </page>
               </notebook>
